@@ -9,32 +9,19 @@ import (
 	"github.com/kashifkhan0771/go-weather/models"
 )
 
-type WeatherAPIConfig struct {
-	XApiKey string `json:"key"`
-}
-
-func (c *WeatherAPIConfig) GetCurrentWeather(query string) (*models.WeatherResponse, error) {
-	if query == "" {
+// GetCurrentWeather return current weather response based on the option query
+func (c *WeatherAPIConfig) GetCurrentWeather(options Options) (*models.WeatherResponse, error) {
+	if options.Query == "" {
 		return nil, fmt.Errorf("query is empty")
 	}
 
-	url := fmt.Sprintf("%s%s?q=%s", config.BaseURL, config.CurrentWeatherJSON, query)
+	url := fmt.Sprintf("%s%s?q=%s", config.BaseURL, config.CurrentWeatherJSON, options.Query)
 
-	// Create HTTP client
-	client := http.Client{}
-
-	req, err := http.NewRequest(http.MethodGet, url, http.NoBody)
+	resp, err := c.makeRequest(http.MethodGet, url)
 	if err != nil {
 		return nil, err
 	}
 
-	req.Header.Set("key", c.XApiKey)
-
-	// Send request
-	resp, err := client.Do(req)
-	if err != nil {
-		return nil, err
-	}
 	defer resp.Body.Close()
 
 	// Check response status code
