@@ -14,11 +14,11 @@ go get "github.com/kashifkhan0771/go-weather"
 
     import (
         "fmt"
-        "github.com/kashifkhan0771/go-weather"
+        weatherClient "github.com/kashifkhan0771/go-weather"
     )
 
     func main() {
-        config := client.WeatherAPIConfig{
+        config := weatherClient.WeatherAPIConfig{
             XApiKey: "<your_x_api_key>",
         }
 
