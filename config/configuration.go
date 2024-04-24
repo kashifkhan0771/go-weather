@@ -6,4 +6,7 @@ const (
 
 	// API EndPoints
 	CurrentWeatherJSON = "/current.json"
+
+	// APIsTimeout is a timeout for all the API request to api.weatherapi.com
+	APIsTimeout = 30
 )

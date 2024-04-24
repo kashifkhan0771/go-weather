@@ -1,4 +1,4 @@
-package client
+package go_weather
 
 // WeatherAPIConfig has the configurations required to call the APIs
 type WeatherAPIConfig struct {

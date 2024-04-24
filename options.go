@@ -1,4 +1,4 @@
-package client
+package go_weather
 
 /*
 Options represent the query parameters of the APIs.
