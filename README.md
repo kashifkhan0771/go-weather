@@ -22,7 +22,7 @@ go get "github.com/kashifkhan0771/go-weather"
             XApiKey: "<your_x_api_key>",
         }
 
-        weather, err := config.GetCurrentWeather(client.Options{Query: "Peshawar"})
+        weather, err := config.GetCurrentWeather(weatherClient.Options{Query: "Paris"})
         if err != nil {
             panic(err)
         }
