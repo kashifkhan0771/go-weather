@@ -18,8 +18,9 @@ go get "github.com/kashifkhan0771/go-weather"
     )
 
     func main() {
-        config := weatherClient.WeatherAPIConfig{
-            XApiKey: "<your_x_api_key>",
+        config, err := weatherClient.NewWeatherAPIConfig(<Your_API_Key>)
+        if err != nil {
+            panic(err)
         }
 
         weather, err := config.GetCurrentWeather(weatherClient.Options{Query: "Paris"})
