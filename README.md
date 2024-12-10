@@ -5,7 +5,7 @@ Go-Weather is a simple and efficient Go library for fetching weather information
 ## Features
 - Fetch current weather for any location.
 - Retrieve forecast data for up to 7 days.
-- Support for multiple weather APIs.
+- Supports WeatherAPI integration for reliable weather data.
 - Lightweight and easy-to-use interface.
 
 ## Installation
