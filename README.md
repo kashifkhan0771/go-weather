@@ -49,7 +49,7 @@ client := weather.NewClient("YOUR_API_KEY")
 - `GetCurrentWeather(location string)`: Fetch current weather for a given location.
 - `GetForecast(location string, days int)`: Retrieve weather forecast for a specified number of days.
 ## Examples
-Detailed usage examples for each function are provided in the [EXAMPLES.md](https://github.com/that-ar-guy/go-weather/blob/update-readme.md/EXAMPLES.md) file.
+Detailed usage examples for each function are provided in the [EXAMPLES.md](EXAMPLES.md) file.
 
 
 ## Contributing
