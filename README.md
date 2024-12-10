@@ -1,4 +1,4 @@
-# Go-Weather
+# Go API Weather
 
 Go-Weather is a simple and efficient Go library for fetching weather information from various sources. This library allows developers to seamlessly integrate weather data into their applications.
 
