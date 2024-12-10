@@ -3,7 +3,7 @@
 [![Go Version](https://img.shields.io/github/go-mod/go-version/kashifkhan0771/go-weather)](https://golang.org/)
 [![License](https://img.shields.io/github/license/kashifkhan0771/go-weather)](LICENSE)
 
-Go-Weather is a simple and efficient Go library for fetching weather information from  https://www.weatherapi.com . This library allows developers to seamlessly integrate weather data into their applications.
+Go-Weather is a simple and efficient Go library for fetching weather information from [WeatherAPI](https://www.weatherapi.com). This library allows developers to seamlessly integrate weather data into their applications.
 
 ## Features
 - Fetch current weather for any location.
@@ -45,13 +45,52 @@ func main() {
 ## Configuration
 Set up your client with the API key provided by the weather service:
 
-```
+```go
 client := weather.NewClient("YOUR_API_KEY")
 ```
 
+### Advanced Congiguration
+Configure the client with additional options (if available):
+
+```go
+client := weather.NewClient(
+    "YOUR_API_KEY",
+    weather.WithTimeout(10*time.Second),
+)
+```
+
 ## Supported Functions
-- `GetCurrentWeather(location string)`: Fetch current weather for a given location.
-- `GetForecast(location string, days int)`: Retrieve weather forecast for a specified number of days.
+
+### GetCurrentWeather
+
+```go
+func GetCurrentWeather(location string) (*Weather, error)
+```
+
+Fetches current weather for a given location.
+
+Parameters:
+- `location`: City name, postal code, or coordinates
+
+Returns:
+- `*Weather`: Weather information including temperature, conditions, etc.
+- `error`: API errors, network issues, or invalid location
+
+### GetForecast
+
+```go
+func GetForecast(location string, days int) (*Forecast, error)
+```
+
+Retrieves weather forecast for specified days.
+
+Parameters:
+- `location`: City name, postal code, or coordinates
+- `days`: Number of days (1-7)
+
+Returns:
+- `*Forecast`: Forecast information for requested days
+- `error`: API errors, network issues, or invalid parameters
 
 ## Examples
 Detailed usage examples for each function are provided in the [EXAMPLES.md](EXAMPLES.md) file.
