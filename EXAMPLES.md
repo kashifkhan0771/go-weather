@@ -1,6 +1,3 @@
-
-
-
 # Examples for Go-API Client
 
 ## Example 1: Fetching Current Weather
