@@ -1,33 +1,68 @@
-# Go API Client
+# Go-Weather
 
-### API Docs:
-[WeatherAPI Documentation](https://www.weatherapi.com/docs/)
+Go-Weather is a simple and efficient Go library for fetching weather information from various sources. This library allows developers to seamlessly integrate weather data into their applications.
 
-### Usage:
-### Download:
+## Features
+- Fetch current weather for any location.
+- Retrieve forecast data for up to 7 days.
+- Support for multiple weather APIs.
+- Lightweight and easy-to-use interface.
+
+## Installation
+To use Go-Weather in your project, ensure you have Go installed and run:
 ```bash
-go get "github.com/kashifkhan0771/go-weather"
+go get github.com/kashifkhan0771/go-weather
 ```
-<code>
 
-    package main
+## Usage
+Import the library in your Go application:
 
-    import (
-        "fmt"
-        weatherClient "github.com/kashifkhan0771/go-weather"
-    )
 
-    func main() {
-        config, err := weatherClient.NewWeatherAPIConfig(<Your_API_Key>)
-        if err != nil {
-            panic(err)
-        }
+```
+package main
 
-        weather, err := config.GetCurrentWeather(weatherClient.Options{Query: "Paris"})
-        if err != nil {
-            panic(err)
-        }
+import (
+    "fmt"
+    "github.com/kashifkhan0771/go-weather"
+)
 
-        fmt.Println(weather)
+func main() {
+    client := weather.NewClient("YOUR_API_KEY")
+    currentWeather, err := client.GetCurrentWeather("London")
+    if err != nil {
+        fmt.Println("Error fetching weather:", err)
+        return
     }
-</code>
+
+    fmt.Printf("Current temperature in London: %f°C\n", currentWeather.Temperature)
+}
+```
+
+## Configuration
+Set up your client with the API key provided by the weather service:
+
+```
+client := weather.NewClient("YOUR_API_KEY")
+```
+
+## Supported Functions
+- `GetCurrentWeather(location string)`: Fetch current weather for a given location.
+- `GetForecast(location string, days int)`: Retrieve weather forecast for a specified number of days.
+## Examples
+Detailed usage examples for each function are provided in the `EXAMPLES.md` file.
+
+
+## Contributing
+Contributions are welcome! Please follow the steps below:
+
+- Fork the repository.
+- Create a feature branch: git checkout -b feature-name.
+- Commit your changes: git commit -m 'Add new feature'.
+- Push to your branch: git push origin feature-name.
+- Open a pull request.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/kashifkhan0771/go-weather/blob/main/LICENSE) file for details.
+
+## Acknowledgments
+Thanks to WeatherAPI for data integration.
