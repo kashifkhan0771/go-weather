@@ -43,6 +43,10 @@ func main() {
         return
     }
 
+    if forecast.Days == nil {
+        fmt.Println("No forecast data available")
+        return
+    }
     for _, day := range forecast.Days {
         fmt.Printf("Date: %s, Temp: %f°C\n", day.Date, day.Temperature)
     }
