@@ -1,16 +1,20 @@
 # Go API Weather
 
-Go-Weather is a simple and efficient Go library for fetching weather information from various sources. This library allows developers to seamlessly integrate weather data into their applications.
+[![Go Version](https://img.shields.io/github/go-mod/go-version/kashifkhan0771/go-weather)](https://golang.org/)
+[![License](https://img.shields.io/github/license/kashifkhan0771/go-weather)](LICENSE)
+
+Go-Weather is a simple and efficient Go library for fetching weather information from  https://www.weatherapi.com . This library allows developers to seamlessly integrate weather data into their applications.
 
 ## Features
 - Fetch current weather for any location.
 - Retrieve forecast data for up to 7 days.
 - Supports WeatherAPI integration for reliable weather data.
-- Lightweight and easy-to-use interface.
+- Lightweight
 
 ## Installation
-To use Go-Weather in your project, ensure you have Go installed and run:
-```bash
+In order to use Go-Weather, you need to have Go installed on your system. The library requires Go version 1.22.0 or higher.
+
+```shell
 go get github.com/kashifkhan0771/go-weather
 ```
 
@@ -18,7 +22,7 @@ go get github.com/kashifkhan0771/go-weather
 Import the library in your Go application:
 
 
-```
+```go
 package main
 
 import (
@@ -48,6 +52,7 @@ client := weather.NewClient("YOUR_API_KEY")
 ## Supported Functions
 - `GetCurrentWeather(location string)`: Fetch current weather for a given location.
 - `GetForecast(location string, days int)`: Retrieve weather forecast for a specified number of days.
+
 ## Examples
 Detailed usage examples for each function are provided in the [EXAMPLES.md](EXAMPLES.md) file.
 
